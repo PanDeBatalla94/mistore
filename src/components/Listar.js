@@ -11,7 +11,7 @@ class Listar extends React.Component {
     }
 
     cargarDatos(){
-        fetch("http://localhost/tienda/?consultarUsuarios")
+        fetch("http://localhost/mistore/?consultarUsuarios")
         .then(respuesta=>respuesta.json())
         .then((datosRespuesta) =>{
             console.log(datosRespuesta);

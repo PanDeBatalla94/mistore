@@ -1,5 +1,8 @@
 import React from 'react';
 import '../css/ListarProductos.css';
+import {  BrowserRouter as Router,  Route,  Routes} from "react-router-dom";
+import {  Link } from "react-router-dom";
+
 
 class ListarProductos  extends React.Component {
     constructor(props) {
@@ -11,7 +14,7 @@ class ListarProductos  extends React.Component {
      }
 
     cargarDatos(){
-        fetch("http://localhost/tienda/?consultarProductos",{
+        fetch("http://localhost/mistore/?consultarProductos",{
             method:"GET", 
             //body:JSON.stringify()
         })
@@ -55,7 +58,7 @@ class ListarProductos  extends React.Component {
                             
                             <div class="item-container">
                                 <img src="./images/Xiaomi_Image.jpeg" alt="Product Image"></img>
-                                <p>{producto.descripcion}</p>
+                                <p><Link className="option" to={"/ProductDetail"}> {producto.descripcion}  </Link> </p>   
                                 <div class="item-information">            
                                     <p>{producto.costoProd} Bs.</p>
                                     <button type="submit" class="add-cart-btn">Agregar al Carrito</button>            
@@ -68,7 +71,11 @@ class ListarProductos  extends React.Component {
         <div class="card-footer text-muted">
             
         </div>
-    </div>);
+
+  
+
+        </div>
+        );
     }
 }
  
