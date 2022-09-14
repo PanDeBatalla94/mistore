@@ -22,7 +22,7 @@ class Crear extends React.Component {
         const{nombre, apellido, correo, fechaNac, password} = this.state;
         var datosEnvio = {nombre:nombre, apellido:apellido, correo:correo, password:password, fechaNac:fechaNac};
 
-        fetch("http://localhost/tienda/?insertar=1",{
+        fetch("http://localhost/mistore/?insertar=1",{
             method:"POST", 
             body:JSON.stringify(datosEnvio)
         })
@@ -50,8 +50,6 @@ class Crear extends React.Component {
         
         return ( 
             <div className="create-account-container">
-
-
                 
                 <h1 className="create-account-title">Crear Cuenta</h1>
                 
