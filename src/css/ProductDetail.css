@@ -180,6 +180,7 @@ body {
     font-weight: bold;          
     border: none;
     cursor: pointer;
+    position:absolute
 }
 
 .buy-now-btn {
@@ -210,4 +211,15 @@ body {
 .item-favorite p { 
     font-size: var(--md);
     color: var(--black);
+}
+
+.text-link {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.item-title {
+    height: 70px;
+    font-weight: bold;
+    font-size: var(--lg);
 }

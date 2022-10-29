@@ -4,19 +4,21 @@ import Crear from "./components/Crear";
 import Editar from "./components/Editar";
 import MainHeader from "./components/MainHeader";
 import ProductDetail from "./components/ProductDetail";
-import ListarProductos from "./components/ListarProductos";
+import ListarProductos from "./components/Products/ListarProductos";
 import {  BrowserRouter as Router,  Route,  Routes} from "react-router-dom";
 import {  Link } from "react-router-dom";
 import React from 'react';
 import './css/Navegacion.css';
 
 
-function App() {
+const App = () => {
   return (
     <div className="container">
+      
     <MainHeader/>
     <Router>
       <nav class="main-nav">
+        
               <img src={require('./icons/down-arrow-categories-icon.svg').default} alt='mySvgImage' className="nav-menu-icon"/>
               <ul>
                   <li>                

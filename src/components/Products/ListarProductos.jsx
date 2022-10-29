@@ -1,8 +1,9 @@
-import React from 'react';
-import '../css/ListarProductos.css';
+import React, { useContext } from 'react';
+
+import '../../css/ListarProductos.scss';
 import {  BrowserRouter as Router,  Route,  Routes} from "react-router-dom";
 import {  Link } from "react-router-dom";
-
+import productImg from "../../images/Xiaomi_Image.jpeg";
 
 class ListarProductos  extends React.Component {
     constructor(props) {
@@ -34,7 +35,7 @@ class ListarProductos  extends React.Component {
     }
 
     render() { 
-        const{datosCargados, productos} = this.state
+        const {datosCargados, productos} = this.state
         if(!datosCargados){
             return(<div>Cargando...</div>);
         }
@@ -47,21 +48,21 @@ class ListarProductos  extends React.Component {
             <div className="card-body">
             <h3>Lista de productos</h3>
 
-            <p>Xiaomi Redmi Note 10 Pro</p>
+            {/* <p>Xiaomi Redmi Note 10 Pro</p>
             <div class="item-information">            
                 <p>Bs. 1500</p>
                 <button type="submit" class="add-cart-btn">Agregar al Carrito</button>            
-            </div> 
+            </div> */}
 
             {productos.map(
                         (producto)=>(
                             
-                            <div class="item-container">
-                                <img src="./images/Xiaomi_Image.jpeg" alt="Product Image"></img>
-                                <p><Link className="option" to={"/ProductDetail"}> {producto.descripcion}  </Link> </p>   
-                                <div class="item-information">            
+                            <div className="item-container">
+                                <img src={productImg} alt="Product Image"></img>
+                                <div className="item-title"><p><Link className="text-link" to={"/ProductDetail"}> {producto.descripcion}  </Link> </p>  </div>  
+                                <div className="item-information">            
                                     <p>{producto.costoProd} Bs.</p>
-                                    <button type="submit" class="add-cart-btn">Agregar al Carrito</button>            
+                                    <button type="submit" className="add-cart-btn" onClick={() => console.log(producto)}>Agregar al Carrito</button>            
                                 </div> 
                             </div> 
                             )
