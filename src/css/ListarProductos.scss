@@ -32,6 +32,10 @@ body {
     border-bottom: 1px solid var(--soft-gray);
     box-shadow: 5px 5px var(--soft-gray);
     float: left;
+    
+    button:hover {
+        background-color: #cecece;
+    }
 }
 
 .item-container img {
